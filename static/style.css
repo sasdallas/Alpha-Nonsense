@@ -1,0 +1,297 @@
+/* Dogenet 2 style.css */
+body{
+  background-color: #F5F7FB;
+  overflow: visible !important;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    margin-bottom: 50px;
+}
+
+.new-post{
+  margin-left: 15%;
+  /* margin-right: 5%; */
+}
+
+.new-post textarea{
+  outline: none;
+  resize: none;
+  width: 60%;
+  height: 200px;
+  position: relative;
+  transition: 0.1s;
+  border-color: rgb(240, 238, 238);
+  border-width: 2px;
+}
+
+.new-post img{
+  height: 198px;
+  width: 198px;
+  position: relative;
+  top: 201px;
+  margin-right: 1px;
+  z-index: 100;
+  margin-top: -200px;
+}
+
+.new-post button{
+  float: left;
+  text-align: left !important;
+  vertical-align: top;
+}
+
+.post{
+  background-color: rgb(250, 250, 250);
+  border-color: rgb(240, 238, 238);
+  border-width: 2px;
+  color: black;
+  width: 70%;
+  padding: 10px;
+  text-align: left !important;
+  min-height: 500px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.post .post-header{
+  text-align: left !important;
+}
+
+.post .post-user-picture {
+  max-width: 90%;
+  position: relative;
+  top: -35px;
+  margin-bottom: -100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 45%;
+}
+
+.post-footer .post-footer-button{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.post .post-owner{
+  position: relative;
+  top: 5px;
+}
+
+.post .updoots{
+  font-size: 75%;
+  color: rgb(75, 74, 74);
+}
+
+.post .post-footer{
+  position: absolute;
+  width: 97%;
+  bottom: 10px;
+}
+
+.post .post-footer-action{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.post .post-footer-action:hover{
+    color: #0056b3;;
+}
+
+.user-profile-header {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  margin-top: -50px;
+}
+
+.user-avatar-image {
+    position: relative;
+    top: -115px;
+    margin-bottom: -100px;
+    width: 200px;
+    height: 200px;
+}
+
+blockquote {
+  /* egang bababooey https://codepen.io/JayBl/details/gOgjjQz */
+  font-size: 20px;
+  margin: 50px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 0.8em 30px 0.3em;
+  border-left: 3px solid #78c0a8;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+/* add your style here. */
+
+
+/* https://codepen.io/Nordlicht2297/details/RwKYxWQ */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 99vmax;
+  border: 4px solid #F5F7FB;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FB;
+}
+
+/* https://stackoverflow.com/questions/3250790/making-a-div-that-covers-the-entire-page */
+.overlay{
+    opacity:1;
+    background-color:rgb(138, 138, 138);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    text-align: center;
+    pointer-events: none;
+}
+
+.alert{
+  opacity: 1;
+}
+
+/* commenting - my own styles */
+.comment-body{
+  background-color: white;
+  height: 500px;
+  width: 40%;
+  z-index: 2000;
+  border-radius: 10px;
+  position: fixed;
+  top: 22%;
+  opacity: 1;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30% !important;
+  transition: 0.2s;
+}
+.comment-x-mark{
+  margin: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comment-container{
+  margin: 10px;
+  margin-left: 20px;
+  padding-right: 100px;
+}
+
+.comment-overlay{
+    opacity:1;
+    background-color:rgb(119, 119, 119);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.comment-owner{
+  font-weight: bold;
+  position: relative;
+  bottom: 15px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.comment-line{
+  border-left: solid #b4b4b4;
+  height: 75px;
+  margin-left: 37.5px;
+  position: relative;
+  bottom: 15px;
+}
+
+.comment-reply-input{
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+.comment-reply-button{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: #1DA1F2;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.comment-reply-button:hover{
+  background-color: rgb(50, 167, 240)
+}
+
+.comment-reply-button:focus{
+  outline:none;
+  background-color: rgb(91, 185, 243)
+}
+.comment-reply-input:focus{
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.comment-post-content{
+  position: relative;
+  bottom: 20px;
+}
+
+.comment-user-picture{
+  width: 75px;
+  border-radius: 50%;
+  height: 75px;
+}
+
+*{
+  transition: 0.2s;
+}
+
+.comment-view-container{
+  background-color: #FAFAFA;
+  width: 70%;
+  border-radius: 10px;
+  height: 75px;
+  padding-top: 13px;
+  text-align: left;
+  padding-left: 13px;
+  margin-bottom: 20px;
+}
+
+.comment-view-user-picture{
+  width: 50px;
+  border-radius: 50%;
+  height: 50px; 
+}
+
+.comment-view-author{
+  position: relative;
+  left: 60px;
+  bottom: 48px;
+}

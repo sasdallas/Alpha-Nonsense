@@ -1,0 +1,69 @@
+{% extends 'specialLayout.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+        <div class="column">
+            <h3>Welcome, <a href="{% url 'user' user.username %}" class="data-spa">@{{ user.username }}</a></h3>
+        {% if user.feedOption == "d" %}
+        
+        {% for post in last %}
+            <div class="box">
+                {{ post.md }}
+                <span class="is-small has-text-grey-light">
+                    ({{ post.timestamp }}) by {{ post.tuser.username }}
+                </span>
+                <div class="post-footer">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item post-footer-button">
+                                <a class="nav-link active" href="{% url 'like'  post.pst_id  %}">
+                                    
+                                    {% if post in user.likes.all %}
+                                        <i class="bi bi-heart-fill"></i>
+                                    {% else %}
+                                        <i class="bi bi-heart"></i>
+                                    {% endif %}
+                                
+                                    
+                                    {{post.upvotes}}
+                                </a>
+                            </li>
+                            <li class="nav-item post-footer-button">
+                                <a class="nav-link active" href="#">
+                                    <i class="bi bi-chat"></i>
+                                    {{post.comments}}
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        
+        {% endfor %}
+        {% else %}
+        {% for followed in user.follows.all %}
+            {% for post in followed.posts.all %}
+            
+                <div class="box">
+                    {{ post.md }} is tr
+                    <span class="is-small has-text-grey-light">
+                        ({{ post.timestamp }}) by {{ post.tuser.username }}
+                    </span>
+                    
+                </div>
+                
+            {% endfor %}
+        {% endfor %}
+        {% endif %}
+        </div>
+    
+    <div class="column is-one-third">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button is-primary is-fullwidth is-medium mt-5" type="submit">Post
+            </button>
+        </form>
+    </div>
+{% endblock content %}

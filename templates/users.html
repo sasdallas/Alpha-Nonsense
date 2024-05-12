@@ -1,0 +1,32 @@
+{% extends 'specialLayout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="column">
+    {% for user in users %}
+    <div class="block">
+        <a href="{% url 'user' user.username %}">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                        <img src="{% static 'blank-pic.png' %}"
+                       alt="User image">
+                    </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">
+                          {{ user.username }}
+                        </p>
+                        <p class="subtitle is-6">
+                          @{{ user.username|lower }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

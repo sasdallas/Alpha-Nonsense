@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <div class="container">
+    <center>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <h1>Hello there!</h1>
+        <p>We're so excited to meet you!</p>
+        {% if message %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        <form class="form-signin" method="POST">
+            {% csrf_token %}
+
+            <input type="username" id="inputEmail" class="form-control" name="username" placeholder="Username" required autofocus>
+
+            <input type="email" name="email" class="form-control" placeholder="Email">
+
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register!</button>
+            <p>Already have an account? <a href="{% url 'login' %}">Log in here.</a>
+            <p class="mt-5 mb-3 text-muted">Pieces of this register screen are from Dogenet 2 by ch1ck3n.</p>
+        </form>
+    
+    </center>
+    </div>
+{% endblock content %}

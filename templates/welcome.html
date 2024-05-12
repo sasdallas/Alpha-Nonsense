@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <center>
+        <h1>Nonsense</h1>
+        <p>A non-political place for everyone to chat and hang out.</p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <h5>What is Nonsense?</h5>
+        <p>Nonsense is a place for people to chat and hang out.<br>
+        You can post about other interests, whether it be coding, gaming, or other things.<br>
+        Nonsense will even let you post about pottery(if you're into that).<br>
+        It's a friendly social media app.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        
+        <h3>Ready to join?</h3>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+        <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <h4>Want to chat live with other users?</h4>
+        <a href="#" class="btn btn-primary">Join the chatroom!</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2022. Nonsense is created by techdude17, inspired by dogenet. </p>
+    </center>
+{% endblock content %}

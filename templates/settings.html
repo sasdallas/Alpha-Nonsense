@@ -1,0 +1,31 @@
+{% extends 'navbarLayout.html' %}
+{% load static %}
+
+{% block content %}
+
+<center>
+    <h1>Settings</h1>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+</center>
+
+<h2>Feed Settings</h2>
+<p>These settings customize your feed.</p>
+<p>&nbsp;&nbsp;</p>
+{% if user.feedOption == "d" %}
+<form method="post">
+    {% csrf_token %}
+    <p>Display posts from: <span>
+        <button class="btn btn-primary" disabled>Everyone</button>
+        <button class="btn btn-info" name="followed" value="followed">Followed</button>
+    </span>
+    </p>
+</form>
+{% else %}
+<form method="post">
+    <p>Display posts from: <span>
+        <button class="btn btn-primary" name="everyone" value="everyone">Everyone</button>
+        <button class="btn btn-info" disabled>Followed</button>
+    </span></p>
+</form>
+{% endif %}
+{% endblock content %}
